@@ -7,7 +7,7 @@ SETUP_DNS_SERVER=1
 
 tdnf -y update
 if [ ${SETUP_DNS_SERVER} -eq 1 ]; then
-    tdnf install -y unbound
+    tdnf install -y unbound bindutils
 
     cat > /etc/unbound/unbound.conf << EOF
     server:
